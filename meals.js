@@ -11,5 +11,7 @@ class Meals {
     console.log(this.name, this.items);
   }
 }
-let order = new Meals("breakfast", [1, 2, 3]);
-order.submitOrder();
+// let order = new Meals("breakfast", [1, 2, 3]);
+// order.submitOrder();
+
+module.exports = Meals

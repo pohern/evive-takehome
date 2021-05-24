@@ -1,6 +1,12 @@
 //Input Section 
+// const readline = require("readline").createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+const prompt = require("prompt-sync")({ sigint: true });
 //!!!Build takeOrder function
 //!!! Import meals.js to access class
+const Meals = require('./meals.js')
 //  order = breakfast 1,2,3 
 //node script takeOrder meal name, item name 
 // meal : breakfast lunch dinner
@@ -36,5 +42,25 @@
 
 //Object Oriented Design
 
-console.log('Hello Enter Your Order:')
-console.log(process.argv)
+// console.log('Hello Enter Your Order:')
+// console.log(process.argv)
+
+
+
+// readline.question('What would you like to order Breakfast, Lunch or Dinner?: ', meal => {
+//     console.log(`You selected  ${meal}`)
+//     readline.question('What would you like to order 1: Main, 2: Side 3: Drink? :', selection => {
+//         console.log(`You selected ${selection}`)
+//         console.group(process.argv)
+//         readline.close();
+//     })
+// })
+
+const meal = prompt("What would you like to order Breakfast, Lunch or Dinner?  ");
+// console.log(meal)
+const items = prompt("What would you like to order 1: Main, 2: Side 3: Drink? Please enter these seperated with a comma.  "
+);
+// console.log([items])
+
+let order = new Meals(meal, items);
+order.submitOrder();
