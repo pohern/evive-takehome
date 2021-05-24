@@ -6,6 +6,7 @@ module.exports = {
 };
 
 function show(req, res) {
+console.log(req.query)
   res.send(Breakfast);
 }
 

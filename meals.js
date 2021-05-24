@@ -11,17 +11,17 @@ class Meals {
     //Switch case based off of this.name
     switch (this.name) {
       case "breakfast":
-        fetch("http://localhost:3001/breakfast/")
+        fetch(`http://localhost:3001/${this.name}/`)
           .then((res) => res.json())
           .then((json) => console.log(json));
         break;
       case "lunch":
-        fetch("http://localhost:3001/lunch/")
+        fetch(`http://localhost:3001/${this.name}/`)
           .then((res) => res.json())
           .then((json) => console.log(json));
         break;
       case "dinner":
-        fetch("http://localhost:3001/dinner/")
+        fetch(`http://localhost:3001/${this.name}/`)
           .then((res) => res.json())
           .then((json) => console.log(json));
         break;
