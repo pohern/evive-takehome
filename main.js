@@ -42,11 +42,13 @@ const Meals = require('./meals.js')
 
 const meal = prompt("What would you like to order Breakfast, Lunch or Dinner?  ");
 const mealCased = meal.toLowerCase()
-// console.log(meal)
 const items = prompt("What would you like to order 1: Main, 2: Side 3: Drink? Please enter these seperated with a comma.  "
 );
-const itemsArr = [items]
-// console.log([items])
+if (items.length === 0) {
+  array = new Array();
+} else {
+  array = items.replace(/, +/g, ",").split(",").map(Number);
+};
 
-let order = new Meals(mealCased, itemsArr);
+let order = new Meals(mealCased, array);
 order.submitOrder();
