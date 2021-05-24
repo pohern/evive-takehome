@@ -1,5 +1,4 @@
-import assert from "assert";
-//import function  from main.js 
+const assert = require("assert");//import function  from main.js 
 //import takeOrder from 'main.js'
 // In: Breakfast 1,2,3
 // Out: Eggs, Toast, Coffee
