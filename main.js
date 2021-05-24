@@ -45,7 +45,8 @@ const mealCased = meal.toLowerCase()
 // console.log(meal)
 const items = prompt("What would you like to order 1: Main, 2: Side 3: Drink? Please enter these seperated with a comma.  "
 );
+const itemsArr = [items]
 // console.log([items])
 
-let order = new Meals(mealCased, items);
+let order = new Meals(mealCased, itemsArr);
 order.submitOrder();
