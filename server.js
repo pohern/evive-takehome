@@ -4,13 +4,13 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
-
+const app = express();
 // require routes
 const breakfastRouter = require('./routes/breakfast')
 const lunchRouter = require("./routes/lunch");
 const dinnerRouter = require("./routes/dinner");
 
-const app = express();
+
 
 
 

@@ -7,6 +7,14 @@ class Meals {
   }
   submitOrder() {
     //API call
+    switch (key) {
+        case value:
+            
+            break;
+    
+        default:
+            break;
+    }
     //Switch case based off of this.name
     console.log(this.name, this.items);
   }
