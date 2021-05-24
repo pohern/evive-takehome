@@ -34,6 +34,11 @@ app.use(function (req, res, next) {
   next(createError(404));
 });
 
+const port = 3001;
+
+app.listen(port, () => {
+  console.log(`Express is listening on port ${port}.`);
+});
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
