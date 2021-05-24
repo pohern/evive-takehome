@@ -4,11 +4,15 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
+
 const app = express();
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 // require routes
 const breakfastRouter = require('./routes/breakfast')
 const lunchRouter = require("./routes/lunch");
 const dinnerRouter = require("./routes/dinner");
+const { response } = require("express");
 
 
 
@@ -34,7 +38,7 @@ app.use(function (req, res, next) {
   next(createError(404));
 });
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.listen(port, () => {
   console.log(`Express is listening on port ${port}.`);

@@ -1,11 +1,11 @@
 //Import .json after created
-// const Breakfast = require('../../breakfast.json');
+const Breakfast = require('../breakfast.json');
 
 module.exports = {
-  show,
+  show
 };
 
 function show(req, res) {
-  console.log(req);
+  res.send(Breakfast);
 }
 

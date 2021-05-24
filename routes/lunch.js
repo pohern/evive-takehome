@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const lunchCtrl = require("../controllers/breakfast");
+const lunchCtrl = require("../controllers/lunch");
 
 router.get("/", lunchCtrl.show);
 
