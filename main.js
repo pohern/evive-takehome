@@ -1,7 +1,5 @@
-//Input Section 
 const prompt = require("prompt-sync")({ sigint: true });
 //!!!Build takeOrder function
-// Import meals.js to access class
 const Meals = require('./meals.js')
 //  order = breakfast 1,2,3 
 //node script takeOrder meal name, item name 
@@ -22,21 +20,11 @@ const Meals = require('./meals.js')
 
 //Output Section
 //TODO Write assert tests for each scenario given
-//TODO move tests into __tests__ file
-//TODO write a package json script for running tests
 
 
 //Todo Mock data: 
-//Breakfast Ingredients Array of objects in .json
-//Lunch Ingredients Array of objects in .json
-//Dinner Ingredients Array of objects in .json
-
-//Create Controllers
-
-//Create Routes
 
 
-//Object Oriented Design
 
 
 
@@ -49,6 +37,6 @@ if (items.length === 0) {
 } else {
   array = items.replace(/, +/g, ",").split(",").map(Number);
 };
-
-let order = new Meals(mealCased, array);
+let itemArr = array.sort((a, b) => a - b)
+let order = new Meals(mealCased, itemArr);
 order.submitOrder();

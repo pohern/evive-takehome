@@ -29,10 +29,7 @@ class Meals {
           console.log('Looks like you entered something else, lets try again!')
         break;
     }
-    console.log(this.items)
   }
 }
-// let order = new Meals("breakfast", [1, 2, 3]);
-// order.submitOrder();
 
 module.exports = Meals
