@@ -6,7 +6,12 @@ module.exports = {
 };
 
 function show(req, res) {
-console.log(req.query)
-  res.send(Breakfast);
+const arr = req.query
+console.log(arr)
+  res.send({
+      Breakfast
+    //   "Eggs": req.query.main,
+    //   "Toast": req.query.side
+  });
 }
 

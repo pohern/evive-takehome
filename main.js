@@ -32,11 +32,36 @@ const meal = prompt("What would you like to order Breakfast, Lunch or Dinner?  "
 const mealCased = meal.toLowerCase()
 const items = prompt("What would you like to order 1: Main, 2: Side 3: Drink? Please enter these seperated with a comma.  "
 );
-if (items.length === 0) {
-  array = new Array();
-} else {
-  array = items.replace(/, +/g, ",").split(",").map(Number);
-};
-let itemArr = array.sort((a, b) => a - b)
-let order = new Meals(mealCased, itemArr);
+// const regex = new RegExp(`^[1-3](?:,[1-3])*$`);
+// const regex2 = new RegExp(`^[1-4](?:,[1-4])*$`);
+// if (mealCased === 'breakfast' || 'lunch'){
+//     if (items.match(regex) !== null) {
+//       if (items.length === 0) {
+//         array = new Array();
+//       } else {
+//         array = items
+//           .replace(/, +/g, ",")
+//           .split(",")
+//           .map(Number)
+//           .sort((a, b) => a - b);
+//         console.log(array, "here WHYYYY");
+//       }
+//     }
+// } else if ( mealCased === 'dinner') {
+//     console.log(items.match(regex2), 'here')
+//     if (items.match(regex2) !== null) {
+//       if (items.length === 0) {
+//         array = new Array();
+//       } else {
+//         array = items
+//           .replace(/, +/g, ",")
+//           .split(",")
+//           .map(Number)
+//           .sort((a, b) => a - b);
+//         console.log(array, "here dinner");
+//       }
+//     }
+// } 
+
+let order = new Meals(mealCased, items);
 order.submitOrder();
