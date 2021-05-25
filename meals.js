@@ -51,7 +51,7 @@ class Meals {
            ); 
            break;
         }
-        fetch(`http://localhost:3001/${this.name}/?=${this.array}`)
+        fetch(`http://localhost:3001/${this.name}/?arr=${this.array}`)
           .then((res) => res.json())
           .then((json) => console.log(json));
         break;
