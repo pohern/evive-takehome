@@ -1,13 +1,8 @@
-const createError = require("http-errors");
 const express = require("express");
-const path = require("path");
-const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
-
 const app = express();
-// app.set("views", path.join(__dirname, "views"));
-// app.set("view engine", "ejs");
+
 // require routes
 const breakfastRouter = require('./routes/breakfast')
 const lunchRouter = require("./routes/lunch");
@@ -17,7 +12,7 @@ const dinnerRouter = require("./routes/dinner");
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(cookieParser());
 
 // router middleware
 app.use("/breakfast", breakfastRouter);
