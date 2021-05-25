@@ -8,12 +8,9 @@ const Meals = require("./meals.js");
 //Validate function
 // const takeOrder = (meal, items) => {
 //items is an array of ids
-//items.sort((a, b) => a - b) to make sure its in ascending order
-//Make sure items are all numbers: typeOfItems items.forEach(typeOfItems = number)
-//meal is a string
-//Validate meal.toLowerCase() if not 'breakfast', 'lunch', 'dinner' error
-//Decide where fetch call goes
-//API Call fetch makes an HTTP Request: GET(meal)
+
+
+
 //Return message from API call based on data
 // };
 
@@ -27,23 +24,6 @@ const meal = prompt(
 );
 const mealCased = meal.toLowerCase();
 console.log(mealCased);
-// switch (mealCased) {
-//   case "breakfast":
-//     var items = prompt(
-//       "What would you like to order 1: Main, 2: Side 3: Drink? Please enter these seperated with a comma.  "
-//     );
-//   case "lunch":
-//     var items = prompt(
-//       "What would you like to order 1: Main, 2: Side 3: Drink? Please enter these seperated with a comma.  "
-//     );
-//   case "dinner":
-//     var items = prompt(
-//       "What would you like to order 1: Main, 2: Side 3: Wine 4: Dessert? Please enter these seperated with a comma.  "
-//     );
-//   default:
-//     console.log("Looks like you entered something else, lets try again!");
-//     break;
-// }
 if (mealCased === "breakfast") {
   var items = prompt(
     "What would you like to order 1: Main, 2: Side 3: Drink? Please enter these seperated with a comma.  "

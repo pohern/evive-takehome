@@ -1,7 +1,10 @@
 const fetch = require("node-fetch");
 const regex = new RegExp(`^[1-3](?:,[1-3])*$`);
 const regex2 = new RegExp(`^[1-4](?:,[1-4])*$`);
-
+//Check request to API is valid
+//Modify shape of request???
+// default drink logic to check is water neccesary
+//break into helper functions
 class Meals {
   constructor(name, items) {
     this.name = name;
@@ -27,7 +30,11 @@ class Meals {
             );
             break;
         }
-        fetch(`http://localhost:3001/${this.name}/`)
+        fetch(`http://localhost:3001/${this.name}/`, {
+          method: "POST",
+          body: JSON.stringify({items: this.items}),
+          headers: { "Content-Type": "application/json" },
+        })
           .then((res) => res.json())
           .then((json) => console.log(json));
         break;

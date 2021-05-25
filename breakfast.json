@@ -1,7 +1,5 @@
 {
-  "Meal": "Breakfast",
-  "Main": "Eggs",
-  "Side": "Toast",
-  "Drink": "Coffee",
-  "DefaultDrink": "Water"
+  "1": "Eggs",
+  "2": "Toast",
+  "3": "Coffee"
 }

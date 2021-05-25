@@ -3,7 +3,6 @@
   "Main": "Steak",
   "Side": "Potatoes",
   "Drink": "Wine",
-  "DefaultDrink": "Water",
   "Dessert": "Cake"
 
 }

@@ -6,32 +6,23 @@ const logger = require("morgan");
 
 
 const app = express();
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
+// app.set("views", path.join(__dirname, "views"));
+// app.set("view engine", "ejs");
 // require routes
 const breakfastRouter = require('./routes/breakfast')
 const lunchRouter = require("./routes/lunch");
 const dinnerRouter = require("./routes/dinner");
-const { response } = require("express");
-
-
-
-
 
 // misc middleware
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
-
 
 // router middleware
 app.use("/breakfast", breakfastRouter);
 app.use("/lunch", lunchRouter);
 app.use('/dinner', dinnerRouter)
-
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
