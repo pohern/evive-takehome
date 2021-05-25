@@ -53,12 +53,13 @@ if (mealCased === "breakfast") {
   var items = prompt(
     "What would you like to order 1: Main, 2: Side 3: Drink? Please enter these seperated with a comma.  "
   );
-} else if (mealCased === "dinner") {
+}
+ else if (mealCased === "dinner") {
   var items = prompt(
     "What would you like to order 1: Main, 2: Side 3: Wine 4: Dessert? Please enter these seperated with a comma.  "
   );
 } else {
-    console.log('Hmm lets try that again')
+  console.log("Hmm lets try that again");
 }
 
 let order = new Meals(mealCased, items);
