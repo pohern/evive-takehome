@@ -1,17 +1,15 @@
 //Import .json after created
-const Breakfast = require('../breakfast.json');
+const Breakfast = require("../breakfast.json");
 
 module.exports = {
-  show
+  show,
 };
 
 function show(req, res) {
-const arr = req.query
-console.log(arr)
+  console.log(req.query, 'here');
   res.send({
-      Breakfast
+    Breakfast,
     //   "Eggs": req.query.main,
     //   "Toast": req.query.side
   });
 }
-

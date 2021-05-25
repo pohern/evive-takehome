@@ -23,6 +23,11 @@ class Meals {
               .sort((a, b) => a - b);
             console.log(this.array, "here");
           }
+        } else {
+            console.log(
+              "Looks like something got entered wrong, try ordering again"
+            );
+            break;
         }
         fetch(`http://localhost:3001/${this.name}/`)
           .then((res) => res.json())
@@ -40,8 +45,13 @@ class Meals {
               .sort((a, b) => a - b);
             console.log(this.array, "here");
           }
+        } else {
+           console.log(
+             "Looks like something got entered wrong, try ordering again"
+           ); 
+           break;
         }
-        fetch(`http://localhost:3001/${this.name}/`)
+        fetch(`http://localhost:3001/${this.name}/?=${this.array}`)
           .then((res) => res.json())
           .then((json) => console.log(json));
         break;
@@ -57,6 +67,11 @@ class Meals {
               .sort((a, b) => a - b);
             console.log(this.array, "here dinner");
           }
+        } else {
+            console.log(
+              "Looks like something got entered wrong, try ordering again"
+            );
+            break;
         }
         fetch(`http://localhost:3001/${this.name}/`)
           .then((res) => res.json())
