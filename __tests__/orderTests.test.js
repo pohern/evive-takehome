@@ -1,6 +1,13 @@
-const assert = require("assert");//import function  from main.js 
-//import takeOrder from 'main.js'
-// In: Breakfast 1,2,3
-// Out: Eggs, Toast, Coffee
+const assert = require("assert"); //import function  from main.js
+const Meals = require("../meals.js");
 
-assert(takeOrder('breakfast', [1,2,3]) === ['Eggs', 'Toast', 'Coffee'], 'Output should have been ["Eggs", "Toast", "Coffee"]')
+describe("testing", function () {
+  context("submitOrder", function () {
+    it("should return an object with submitOrder method", function (done) {
+      let order = new Meals('breakfast', '1,2,3');
+      order.submitOrder();
+      assert.ok(order.submitOrder, "order should have a submitOrder method");
+      done();
+    });
+  });
+});

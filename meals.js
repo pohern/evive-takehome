@@ -1,10 +1,15 @@
 const fetch = require("node-fetch");
 const regex = new RegExp(`^[1-3](?:,[1-3])*$`);
 const regex2 = new RegExp(`^[1-4](?:,[1-4])*$`);
-//Check request to API is valid
-//Modify shape of request???
-// default drink logic to check is water neccesary
-//break into helper functions
+
+const toArray = (items) => {
+  array = items
+    .replace(/, +/g, ",")
+    .split(",")
+    .map(Number)
+    .sort((a, b) => a - b);
+};
+
 class Meals {
   constructor(name, items) {
     this.name = name;
@@ -14,25 +19,16 @@ class Meals {
     switch (this.name) {
       case "breakfast":
         if (this.items.match(regex) !== null) {
-          if (this.items.length === 0) {
-            array = new Array();
-          } else {
-            this.array = this.items
-              .replace(/, +/g, ",")
-              .split(",")
-              .map(Number)
-              .sort((a, b) => a - b);
-            console.log(this.array, "here");
-          }
+          toArray(this.items);
         } else {
-            console.log(
-              "Looks like something got entered wrong, try ordering again"
-            );
-            break;
+          console.log(
+            "Looks like something got entered wrong, try ordering again"
+          );
+          break;
         }
         fetch(`http://localhost:3001/${this.name}/`, {
           method: "POST",
-          body: JSON.stringify({items: this.items}),
+          body: JSON.stringify({ items: this.items }),
           headers: { "Content-Type": "application/json" },
         })
           .then((res) => res.json())
@@ -40,45 +36,35 @@ class Meals {
         break;
       case "lunch":
         if (this.items.match(regex) !== null) {
-          if (this.items.length === 0) {
-            array = new Array();
-          } else {
-            this.array = this.items
-              .replace(/, +/g, ",")
-              .split(",")
-              .map(Number)
-              .sort((a, b) => a - b);
-            console.log(this.array, "here");
-          }
+          toArray(this.items);
         } else {
-           console.log(
-             "Looks like something got entered wrong, try ordering again"
-           ); 
-           break;
+          console.log(
+            "Looks like something got entered wrong, try ordering again"
+          );
+          break;
         }
-        fetch(`http://localhost:3001/${this.name}/?arr=${this.array}`)
+        fetch(`http://localhost:3001/${this.name}/`, {
+          method: "POST",
+          body: JSON.stringify({ items: this.items }),
+          headers: { "Content-Type": "application/json" },
+        })
           .then((res) => res.json())
           .then((json) => console.log(json));
         break;
       case "dinner":
         if (this.items.match(regex2) !== null) {
-          if (this.items.length === 0) {
-            array = new Array();
-          } else {
-            this.array = this.items
-              .replace(/, +/g, ",")
-              .split(",")
-              .map(Number)
-              .sort((a, b) => a - b);
-            console.log(this.array, "here dinner");
-          }
+          toArray(this.items);
         } else {
-            console.log(
-              "Looks like something got entered wrong, try ordering again"
-            );
-            break;
+          console.log(
+            "Looks like something got entered wrong, try ordering again"
+          );
+          break;
         }
-        fetch(`http://localhost:3001/${this.name}/`)
+        fetch(`http://localhost:3001/${this.name}/`, {
+          method: "POST",
+          body: JSON.stringify({ items: this.items }),
+          headers: { "Content-Type": "application/json" },
+        })
           .then((res) => res.json())
           .then((json) => console.log(json));
         break;
