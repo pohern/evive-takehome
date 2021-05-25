@@ -13,7 +13,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "mocha": "^8.4.0",
-    "mocha-junit-reporter": "^2.0.0",
     "morgan": "^1.10.0",
     "node-fetch": "^2.6.1",
     "prompt-sync": "^4.2.0"
