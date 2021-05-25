@@ -1,5 +1,3 @@
-//Move to own class file
-//Validate in here
 const fetch = require("node-fetch");
 const regex = new RegExp(`^[1-3](?:,[1-3])*$`);
 const regex2 = new RegExp(`^[1-4](?:,[1-4])*$`);

@@ -1,5 +1,4 @@
 const prompt = require("prompt-sync")({ sigint: true });
-//!!!Build takeOrder function
 const Meals = require("./meals.js");
 //  order = breakfast 1,2,3
 //node script takeOrder meal name, item name
