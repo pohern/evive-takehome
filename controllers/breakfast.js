@@ -14,7 +14,13 @@ function show(req, res) {
   console.log(req.body);
   const items = req.body.items.split(",");
   console.log(items)
-  const breakfast = items.forEach(e => console.log(e))
+  const counts = {}
+  for (let i=0; i<items.length; i++){
+      const num = items[i];
+      counts[num] = counts[num] ? counts[num] + 1 : 1
+  }
+  console.log(counts[3])
+//   console.log(keys(count))
   //take item and turn into propertie of an object
   //check if propertie exists 
   //if it does iterate value of propertie 
@@ -26,6 +32,10 @@ function show(req, res) {
   //check if order for drink id:3
   //Go through JSON and get data with final ids
   res.json(
-    Breakfast
+    {
+        "Eggs": 1,
+        "Toast": 1,
+        "Coffee": ((counts[3]))
+    }
   );
 }
