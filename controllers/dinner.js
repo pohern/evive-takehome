@@ -13,8 +13,8 @@ function show(req,res){
         res.send({"Unable to proccess": "Dessert is misisng"})
     }
     res.send({
-      "Salad": 1,
-      "Chips": 1,
+      "Steak": 1,
+      "Potatoes": 1,
       "Wine": 1,
       "Drink": "Water",
       "Dessert": 1
