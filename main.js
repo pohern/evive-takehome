@@ -28,17 +28,32 @@ const meal = prompt(
 );
 const mealCased = meal.toLowerCase();
 console.log(mealCased);
+// switch (mealCased) {
+//   case "breakfast":
+//     var items = prompt(
+//       "What would you like to order 1: Main, 2: Side 3: Drink? Please enter these seperated with a comma.  "
+//     );
+//   case "lunch":
+//     var items = prompt(
+//       "What would you like to order 1: Main, 2: Side 3: Drink? Please enter these seperated with a comma.  "
+//     );
+//   case "dinner":
+//     var items = prompt(
+//       "What would you like to order 1: Main, 2: Side 3: Wine 4: Dessert? Please enter these seperated with a comma.  "
+//     );
+//   default:
+//     console.log("Looks like you entered something else, lets try again!");
+//     break;
+// }
 if (mealCased === "breakfast") {
   var items = prompt(
     "What would you like to order 1: Main, 2: Side 3: Drink? Please enter these seperated with a comma.  "
   );
-}
-if (mealCased === "lunch") {
+} else if (mealCased === "lunch") {
   var items = prompt(
     "What would you like to order 1: Main, 2: Side 3: Drink? Please enter these seperated with a comma.  "
   );
-}
-if (mealCased === "dinner") {
+} else if (mealCased === "dinner") {
   var items = prompt(
     "What would you like to order 1: Main, 2: Side 3: Wine 4: Dessert? Please enter these seperated with a comma.  "
   );
